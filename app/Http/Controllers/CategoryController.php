@@ -45,6 +45,7 @@ class CategoryController extends Controller
         $category->updated_at = date('Y-m-d H:i:s');
 
         $category->save();
+        
 
         return response()->json("Category Created Successfully");
 
