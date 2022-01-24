@@ -23,3 +23,11 @@ $router->get('/category/{id}', 'CategoryController@singleCategory');
 $router->put('/category/{id}', 'CategoryController@updateCategory');
 $router->delete('/category/{id}', 'CategoryController@deleteCategory');
 $router->post('/category', 'CategoryController@createcategory');
+
+
+//products routes
+$router->get('/products', 'ProductController@index');
+$router->get('/products/{id}', 'ProductController@singleProduct');
+$router->put('/products/{id}', 'ProductController@updateProduct');
+$router->delete('/products/{id}', 'ProductController@deleteProduct');
+$router->post('/products', 'ProductController@createProduct');
