@@ -14,7 +14,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return "Welcome to Lumen App";
 });
 
 //catgeory routers
