@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Log;
 
 class CategoryController extends Controller
 {
@@ -27,7 +28,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        return response()->json("Successfully Updated");
+        return response()->json(["message"=>"Successfully Updated"]);
     }
     public function deleteCategory($id)
     {
@@ -37,6 +38,10 @@ class CategoryController extends Controller
     }
     public function createcategory(Request $request)
     {
+
+
+
+        
         $category = new Category();
 
         $category->category = $request->category;
@@ -47,7 +52,7 @@ class CategoryController extends Controller
         $category->save();
         
 
-        return response()->json("Category Created Successfully");
+        return response()->json([$category,"message"=>"Category Created Successfully"]);
 
     }
 }

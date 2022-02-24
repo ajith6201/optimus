@@ -23,7 +23,11 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
+$app->configure('filesystems');
+
 $app->withFacades();
+
+// class_alias('Illuminate\Support\Facades\Storage', 'Storage');
 
 $app->withEloquent();
 
@@ -62,6 +66,7 @@ $app->singleton(
 
 $app->configure('app');
 
+$app->register(Illuminate\Filesystem\FilesystemServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -95,6 +100,7 @@ $app->middleware([
 | totally optional, so you are not required to uncomment this line.
 |
 */
+$app->register(Fruitcake\Cors\CorsServiceProvider::class);
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
